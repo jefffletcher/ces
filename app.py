@@ -1,9 +1,6 @@
 """
 
-Adapted excerpt from Getting Started with Raspberry Pi by Matt Richardson
-
-Modified by Rui Santos
-Complete project details: http://randomnerdtutorials.com
+Flask-based electric brewery application.
 
 """
 
@@ -91,7 +88,6 @@ def set_target_temp(message):
 	session['receive_count'] = session.get('receive_count', 0) + 1
 	element = message['elementName']
 	temp = message['temp']
-	pinNumber = elements[element]['pin']
 	message = "Set " + element + " target temp to " + temp + "."
 
 	emit('my_response', {'data': message, 'count': session['receive_count']})
