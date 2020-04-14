@@ -1,0 +1,24 @@
+.temp-boil {grid-area: temp-boil}
+.temp-mash {grid-area: temp-mash}
+.temp-hlt {grid-area: temp-hlt}
+.pump-wort {grid-area: pump-wort}
+.pump-water {grid-area: pump-water}
+.timers {grid-area: timer}
+.shutdown {grid-area: shutdown}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'temp-boil temp-boil temp-mash temp-mash temp-hlt temp-hlt'
+    'pump-wort pump-wort pump-wort pump-water pump-water pump-water'
+    'timer timer timer timer timer timer'
+    'shutdown shutdown shutdown shutdown shutdown shutdown';
+  padding: 10px 50px;
+  grid-gap: 10px 20px;
+}
+
+.grid-container > div {
+  background-color: #7395AE;
+  border: 1px solid #B1A296;
+  padding: 20px;
+}

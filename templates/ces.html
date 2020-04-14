@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='common.css') }}"/>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/float-label-css/v1.0.2/dist/float-label.min.css"/>
+    <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+            integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='common.js') }}"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+   {% if boilelement == 1 %}
+             $('#boil-toggle').toggleClass('btn-on');
+             $('#boil-toggle').html('On');
+   {% endif %}
+   {% if hltelement == 1 %}
+             $('#hlt-toggle').toggleClass('btn-on');
+             $('#hlt-toggle').html('On');
+   {% endif %}
+   {% if wortpump == 1 %}
+             $('#wort-pump-toggle').toggleClass('btn-on');
+             $('#wort-pump-toggle').html('On');
+   {% endif %}
+   {% if waterpump == 1 %}
+             $('#water-pump-toggle').toggleClass('btn-on');
+             $('#water-pump-toggle').html('On');
+   {% endif %}
+         });
+    </script>
+</head>
+<body>
+
+<h1 class="title">Cervecería Eléctrica del Sótano</h1>
+
+<div class="grid-container">
+    <div class="temp-boil">
+        <h3>Boil:&nbsp;63.7 °F</h3>
+        <div class="input-button-container">
+        <div class="input-group">
+            <div class="has-float-label">
+                <input id="boil-target" type="text" placeholder="°F"/>
+                <label for="boil-target">Target</label>
+            </div>
+        </div>
+        <button class="btn" id="boil-toggle" type="button">Off</button>
+        </div>
+    </div>
+    <div class="temp-mash">
+        <h3>Mash:&nbsp;63.7 °F</h3>
+        <div class="input-group">
+            <div class="has-float-label">
+                <input id="mash-delta" type="text" placeholder="°F"/>
+                <label for="mash-delta">Delta</label>
+            </div>
+        </div>
+    </div>
+    <div class="temp-hlt">
+        <h3>HLT:&nbsp;63.7 °F</h3>
+        <div class="input-button-container">
+        <div class="input-group">
+            <div class="has-float-label">
+                <input id="hlt-target" type="text" placeholder="°F"/>
+                <label for="hlt-target">Target</label>
+            </div>
+        </div>
+        <button class="btn" id="hlt-toggle" type="button">Off</button>
+        </div>
+    </div>
+    <div class="pump-wort center">
+        <h2>Wort Pump</h2>
+        <button class="btn" id="wort-pump-toggle" type="button">Off</button>
+    </div>
+    <div class="pump-water center">
+        <h2>Water Pump</h2>
+        <button class="btn" id="water-pump-toggle" type="button">Off</button>
+    </div>
+    <div class="timers">timers</div>
+    <div class="shutdown">
+        <button class="btn" id="shutdown" type="button">Shutdown</button>
+    </div>
+</div>
+
+<h2>Receive:</h2>
+<div id="log"></div>
+
+</body>
+</html>

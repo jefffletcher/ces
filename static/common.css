@@ -1,0 +1,64 @@
+body {
+  background-color: #557A95;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  color: #00003E;
+}
+
+.title {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: .5em 2em;
+  letter-spacing: 0.05rem;
+  box-shadow: inset 0 0 0 2px #5D5C61;
+  color: #5D5C61;
+}
+
+.btn-on {
+  color: #5A0016;
+  box-shadow: inset 0 0 0 2px #5A0016;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-block-start: 3px;
+  margin-block-end: 3px;
+}
+h2 {
+  font-size: 1.71428571rem;
+  margin-block-start: 0px;
+  margin-block-end: 10px;
+}
+h3 {
+  font-size: 1.28571429rem;
+  font-weight: 700;
+  margin-block-start: 0px;
+  margin-block-end: 10px;
+}
+
+.input-button-container {
+    display: flex;
+}
+input, select {
+  width: 100%;
+  margin-bottom: .5rem;
+  flex: 1;
+}
+.input-group {
+  display: table;
+  width: 100%;
+}
+.input-group > * {
+  display: table-cell;
+  width: 80%;
+}
